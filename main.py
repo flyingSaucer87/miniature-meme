@@ -34,3 +34,18 @@ def take_command():
     except:
         pass
     return command
+# Defining the commands and their output
+def run_jarvis():
+    command = take_command()
+    print("Recognizing...Created by @Yogi")
+    print(command)
+# A command to play music on YouTube
+    if 'play' in command:
+        song = command.replace('play', '')
+        talk('playing ' + song)
+        pywhatkit.playonyt(song)
+
+# A command to tell the time
+    elif 'time' in command:
+        time = datetime.datetime.now().strftime('%I:%M %p')
+        talk('Current time is ' + time)
