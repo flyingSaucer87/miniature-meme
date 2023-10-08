@@ -49,3 +49,14 @@ def run_jarvis():
     elif 'time' in command:
         time = datetime.datetime.now().strftime('%I:%M %p')
         talk('Current time is ' + time)
+# A command which will open youtube on google chrome
+    elif 'youtube' in command:
+        webbrowser.open("https://www.youtube.com/")
+        talk("YouTube has been opened...") 
+      
+# A command which uses the Wikipedia module to get information about people from wikipedia
+    elif 'who is' in command:
+        person = command.replace('who is', '')
+        info = wikipedia.summary(person, 1)
+        print(info)
+        talk(info)
