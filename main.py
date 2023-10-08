@@ -60,3 +60,19 @@ def run_jarvis():
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
+
+# A command which will play...well..the best song (be surprised lol)
+    elif 'best song' in command:
+        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        talk("There you go")
+        
+# A command to open reddit
+    elif 'reddit' in command:
+        webbrowser.open("https://www.reddit.com/")
+        talk("Opening Reddit...")
+'''
+Like this, you can add up any command to open any website...
+'''
+
+while True:
+    run_jarvis()
