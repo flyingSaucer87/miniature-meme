@@ -102,11 +102,20 @@ def run_jarvis():
             talk(f"Here are some headlines on {command}\n Happy Reading.")
         else:  # general news
             webbrowser.open_new_tab(newsURL)
-            command(
+            talk(
                 'Here are some news headlines." \
                     "Happy reading'
             )
 
+# A command to open spotify or search a song on spotify
+    elif "spotify" in command or "search the song":
+        if "spotify" in command:
+            webbrowser.open_new_tab("https://open.spotify.com")
+            talk("Opening Spotify...")
+        else: #open spotify with a specific song
+            songname = command.replace('search the song', '')
+            webbrowser.open_new_tab("https://open.spotify.com/search/"+songname+"/tracks")
+            talk("Searching the song on Spotify...")
 
 '''
 Like this, you can add up any command to open any website...
